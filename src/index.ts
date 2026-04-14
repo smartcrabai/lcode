@@ -14,7 +14,7 @@ async function main() {
 
 	for await (const message of executeQuery(opts)) {
 		outputFn(message);
-		if (message.type === "result") {
+		if (message.type === "result" && opts.summary) {
 			writeResultSummary(message);
 		}
 	}

@@ -15,6 +15,7 @@ Options:
   -c, --continue               Continue most recent session
   -r, --resume <session-id>    Resume a specific session
   -o, --output-format <fmt>    Output format: text (default) or json
+      --summary                Show cost and turns summary after completion
   -h, --help                   Show this help
   -v, --version                Show version
 
@@ -41,6 +42,7 @@ export async function parseCliArgs(): Promise<CliOptions> {
 			continue: { type: "boolean", short: "c" },
 			resume: { type: "string", short: "r" },
 			"output-format": { type: "string", short: "o" },
+			summary: { type: "boolean" },
 			help: { type: "boolean", short: "h" },
 			version: { type: "boolean", short: "v" },
 		},
@@ -99,5 +101,6 @@ export async function parseCliArgs(): Promise<CliOptions> {
 		continue: values.continue,
 		resume: values.resume,
 		outputFormat: outputFormat ?? "text",
+		summary: values.summary ?? false,
 	};
 }

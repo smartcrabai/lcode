@@ -9,6 +9,7 @@ export interface CliOptions {
 	continue?: boolean;
 	resume?: string;
 	outputFormat: OutputFormat;
+	summary: boolean;
 }
 
 export const MAX_RETRY_DURATION_MS = 10 * 60 * 60 * 1000; // 10 hours
