@@ -1,0 +1,24 @@
+{
+  "name": "lcode",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "lcode": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "lint": "biome check ./src",
+    "lint:fix": "biome check --write --unsafe ./src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.11",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.98",
+    "@typescript/native-preview": "^7.0.0-dev.20260410.1"
+  }
+}
