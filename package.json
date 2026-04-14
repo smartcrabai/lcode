@@ -1,5 +1,6 @@
 {
   "name": "lcode",
+  "version": "0.1.0",
   "module": "index.ts",
   "type": "module",
   "bin": {
@@ -7,6 +8,7 @@
   },
   "scripts": {
     "start": "bun run src/index.ts",
+    "build": "bun run scripts/build.ts",
     "lint": "biome check ./src",
     "lint:fix": "biome check --write --unsafe ./src"
   },

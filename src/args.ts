@@ -1,4 +1,5 @@
 import { parseArgs } from "node:util";
+import pkg from "../package.json";
 import type { CliOptions, OutputFormat } from "./types.ts";
 import { OUTPUT_FORMATS } from "./types.ts";
 
@@ -53,9 +54,6 @@ export async function parseCliArgs(): Promise<CliOptions> {
 	}
 
 	if (values.version) {
-		const pkg = await Bun.file(
-			new URL("../package.json", import.meta.url),
-		).json();
 		console.log(`lcode ${pkg.version ?? "0.0.0"}`);
 		process.exit(0);
 	}
